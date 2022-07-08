@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-vk_path = 'vk_audio.html'   # Локальный путь к сохраненной странице со всеми вашими аудиозаписями
+vk_path = 'vk_audio.html'   # Локальный путь к сохраненной копии страницы со всеми вашими аудиозаписями
 # (VK: Главная > Мои треки)
 
 ya_token = '%YOUR_TOKEN_HERE%'  # Ваш токен от Яндекс.Музыки
@@ -38,6 +38,7 @@ if __name__ == '__main__':
 
             try:
                 track = client.search(text=name).tracks.results[0]
+                # Только первый трек из выдачи по соответствующему поисковому запросу
                 track_id = track['id']
                 album_id = track['albums'][0]['id']
 
